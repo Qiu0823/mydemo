@@ -1,0 +1,124 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url("~@/assets/img/bg.png");
+  background-size: 100%;
+  margin-bottom: 100px;
+}
+.areaBorderStyle {
+  box-shadow: 0 0 2vh #237ad4 inset;
+  background: linear-gradient(#1359df, #1359df) left top, linear-gradient(#1359df, #1359df) right top, linear-gradient(#1359df, #1359df) left bottom, linear-gradient(#1359df, #1359df) right bottom;
+  background-repeat: no-repeat;
+  background-size: 0.1vw 18vw, 1.5vw 0.1vw;
+}
+.LEDbtn {
+  width: 13px;
+  height: 13px ;
+  border-radius: 50%;
+  margin-top: 4px;
+  margin-right: 35px;
+}
+.greenBtn {
+  background-color: #0d6b0d;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.greenBtn .redBtn {
+  background-color: red;
+  border: 1px solid hsla(0, 69%, 23%, 0.808);
+  outline: none;
+  box-shadow: inset 0 1px 0 hsl(0, 48%, 83%), 0 2px 0 hsl(4, 78%, 67%), 0 3px 0 hsla(2, 89%, 57%, 0.808), 0 4px 0 hsl(4, 97%, 26%), 0 5px 0 hsl(0, 97%, 12%), 0 6px 0 hsl(0, 94%, 13%), 0 7px 0 hsl(0, 91%, 9%), 0 8px 0 hsl(0, 76%, 6%), 0 9px 0 hsl(0, 88%, 3%);
+}
+.greenBtn .bordered {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+}
+.greenBtn .arrowBottom1 ::after {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+  border-top-color: red;
+  top: 100%;
+  left: 50%;
+  margin-left: 8vw;
+}
+.greenBtn .arrowBottom2 ::after {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+  border-right-color: red;
+  top: 20%;
+  left: 100%;
+  margin-left: -30vw;
+}
+.greenBtn .arrowBottom3 ::after {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+  border-right-color: red;
+  top: 100%;
+  left: 50%;
+  margin-left: -3vw;
+}
+.greenBtn .arrowBottom4 ::after {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+  border-right-color: red;
+  top: -50%;
+  left: 52%;
+  margin-left: -30vw;
+}
+.greenBtn .arrowBottom4 ::before {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+}
+.greenBtn .arrowBottom4 ::before ::after {
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  border: 13px solid  transparent;
+  opacity: 0.8;
+  z-index: 999;
+  border-top-color: red;
+  top: 100%;
+  left: 50%;
+  margin-left: 8vw;
+}
