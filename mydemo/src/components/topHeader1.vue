@@ -63,10 +63,10 @@ export default {
     text-align: center;
     line-height: 25px;
     border-radius:4px;
-  }
-  img{
+      img{
     height: 50px!important;
     width: 50px!important;
+  }
   }
 }
 </style>
