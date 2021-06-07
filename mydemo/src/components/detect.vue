@@ -4,7 +4,7 @@
       <div class="area-name">测量区</div>
       <div class="doorOne">
         <!-- <img src="@/assets/img/door.png" alt="" /> -->
-            <i class="iconfont">&#xe63f;</i>
+            <i class="iconfont icon-mendoor13"></i>
       </div>
       <div class="detect1">
         <div class="detect1-top">
@@ -14,7 +14,7 @@
           <oneCell :device="dec2"></oneCell>
         </div>
       </div>
-      <div class="detect2">
+      <div class="detect2" @click="link(33)">
         <div class="detect2-onecell" v-for="item in decArr" :key="item.id">
           <span class="dv-title">{{ item.title }}</span>
           <div class="LEDbtn greenBtn"></div>
@@ -22,6 +22,9 @@
       </div>
     </div>
     <div class="chufei">抽检台架</div>
+		<div class="load1">
+			<span class="iconfont icon-lu1"></span>
+		</div>
     <div class="house">
       <div class="house-top">2#电气室</div>
       <div class="house-bottom">集控室</div>
@@ -89,6 +92,11 @@ export default {
       ],
     };
   },
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
+	}
 };
 </script>
 
@@ -107,7 +115,7 @@ export default {
   position: relative;
   .doorOne {
     position: absolute;
-    bottom: -1vh;
+    bottom: -3vh;
     right: -3vh;
     width: 2vw;
     height: 1.5vw;
@@ -170,6 +178,7 @@ export default {
   }
 }
 .detect2 {
+	cursor:pointer;
   height: 100%;
   flex: 1;
   display: flex;
@@ -202,19 +211,31 @@ export default {
   width: 60%;
   height: 50%;
 }
+.load1{
+	display: inline-block;
+	position: relative;
+	top: 3vh;
+	left: 14vh;
+	transform: scaleX(20);
+	width: 30%;
+		.iconfont{
+			font-size: 36px;
+			color: grey;
+		}
+}
 .chufei {
   // flex: 1;
   border: 1px solid #203456;
   width: 30%;
   // height: 25%;
-  height: 50%;
+  height: 30%;
   float: right;
   text-align: center;
   padding-top: 20h;
-  line-height: 7vh;
+  line-height: 4vh;
   box-sizing: border-box;
   position: relative;
-  top: 7vh;
+  top: 12vh;
   left: -5vw;
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
 	<div class="container">
-		<div class="fcr11">
+		<div class="fcr11" @click="link(2)">
 			<oneCell :device='fcr11'></oneCell>
 		</div>
-		<div class="fcr12">
+		<div class="fcr12" @click="link(6)">
 			<oneCell :device='fcr12'></oneCell>
 		</div>
-		<div class="fcr13">
+		<div class="fcr13"  @click="link(16)">
 			<oneCell :device='fcr13'></oneCell>
 		</div>
-		<div class="fcr14">
+		<div class="fcr14" @click="link(16)">
 			<oneCell :device='fcr14'></oneCell>
 		</div>
 	</div>
@@ -41,6 +41,11 @@
 					status:'nomal'
 				},
 		}
+	},
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
 	}
 	}
 </script>
@@ -55,16 +60,20 @@
 	.fcr11{
 			height: 10%;
 		margin-top: 19%;
+		cursor:pointer;
 	}
 	.fcr12{
 		height: 10%;
 		margin-top: 50%;
+		cursor:pointer;
 	}
 	.fcr13{
 		height: 10%;
+		cursor:pointer;
 	}
 		.fcl14{
 		height: 10%;
 		margin-bottom: 5%;
+		cursor:pointer;
 	}
 </style>

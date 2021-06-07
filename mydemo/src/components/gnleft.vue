@@ -3,16 +3,16 @@
     <div class="gnl1">
       <oneCell :device="gnl1"></oneCell>
     </div>
-    <div class="gnl2">
-      <oneCell :device="gnl2"></oneCell>
+    <div class="gnl2" @click="link(21)">
+      <oneCell :device="gnl2" ></oneCell>
     </div>
-    <div class="gnl3">
-      <oneCell :device="gnl3"></oneCell>
-    </div>
+			<div class="gnl3" @click="link(23)">
+			  <oneCell :device="gnl3"></oneCell>
+			</div>
     <div class="gnl5">
       <oneCell :device="gnl5"></oneCell>
     </div>
-    <div class="gnl4">
+    <div class="gnl4" @click="link(25)">
       <oneCell :device="gnl4"></oneCell>
     </div>
   </div>
@@ -48,6 +48,11 @@ export default {
       },
     };
   },
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
+	}
 };
 </script>
 
@@ -58,18 +63,23 @@ div {
 }
 .gnl1 {
   height: 10%;
+	cursor:pointer;
 }
 .gnl2 {
   height: 10%;
+	cursor:pointer;
 }
 .gnl3 {
   height: 10%;
   margin-top: 10%;
+	cursor:pointer;
 }
 .gnl4 {
   height: 10%;
+	cursor:pointer;
 }
 .gnl5 {
   height: 10%;
+	cursor:pointer;
 }
 </style>

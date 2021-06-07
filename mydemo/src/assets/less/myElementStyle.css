@@ -1,0 +1,7 @@
+		.el-table, .el-table__expanded-cell{
+			background-color: #003B51
+		}
+		
+		.el-table--enable-row-hover .el-table__body tr:hover>td{
+		background-color: #212e3e !important;
+		}

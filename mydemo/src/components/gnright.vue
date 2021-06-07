@@ -1,15 +1,15 @@
 <template>
 	<div class="container">
-		<div class="gnr1">
+		<div class="gnr1" @click="link(22)">
 			<oneCell :device='gnr1'></oneCell>
 		</div>
-		<div class="gnr2">
+		<div class="gnr2" @click="link(24)">
 			<oneCell :device='gnr2'></oneCell>
 		</div>
-		<div class="gnr3">
+		<div class="gnr3" @click="link(26)">
 			<oneCell :device='gnr3'></oneCell>
 		</div>
-		<div class="gnr4">
+		<div class="gnr4" @click="link(27)">
 			<oneCell :device='gnr4'></oneCell>
 		</div>
 		<div class="gnr5">
@@ -18,7 +18,7 @@
 			<div class="gnr7">
 			<oneCell :device='gnr7'></oneCell>
 		</div>
-		<div class="gnr6">
+		<div class="gnr6" @click="link(28)">
 			<oneCell :device='gnr6'></oneCell>
 		</div>
 	</div>
@@ -62,6 +62,11 @@
 					status:'nomal'
 				},
 		}
+	},
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
 	}
 	}
 </script>
@@ -75,26 +80,33 @@
 	.gnr1{
 		height: 10%;
 		margin-top: 15%;
+		cursor:pointer;
 	}
 	.gnr2{
 		height: 10%;
 		margin-top: 10%;
+		cursor:pointer;
 	}
 	.gnr3{
 		height: 10%;
 		margin-top: 5%;
+		cursor:pointer;
 	}
 	.gnr4{
 		margin-top: 5%;
 		height: 10%;
+		cursor:pointer;
 	}
 	.gnr5{
 		height: 10%;
+		cursor:pointer;
 	}
 	.gnr6{
 		height: 10%;
+		cursor:pointer;
 	}
 	.gnr7{
 		height: 10%;
+		cursor:pointer;
 	}
 </style>

@@ -7,7 +7,9 @@
       </div>
       <div class="dryMachine areaBorderStyle">
         <one-cell :device="arb7"></one-cell>
-        <one-cell :device="arb8" class="dry-two"></one-cell>
+				<div @click="link(32)" style="cursor:pointer;">
+					<one-cell :device="arb8" class="dry-two"></one-cell>
+				</div>
       </div>
       <div class="b21">
         <one-cell :device="arb3"></one-cell>
@@ -15,7 +17,7 @@
       </div>
     </div>
     <div class="b2">
-      <div class="b22 areaBorderStyle">
+      <div class="b22 areaBorderStyle" @click="link(31)">
         <div class="dv-title">涂层区</div>
         <one-cell :device="arb4"></one-cell>
       </div>
@@ -23,7 +25,7 @@
         <one-cell :device="arb2"></one-cell>
         <div class="b23-bottom"></div>
       </div>
-      <div class="b24 areaBorderStyle">
+      <div class="b24 areaBorderStyle" @click="link(30)">
         <div class="dv-title">退磁</div>
         <one-cell :device="arb5"></one-cell>
       </div>
@@ -77,6 +79,11 @@ export default {
       },
     };
   },
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
+	}
 };
 </script>
 
@@ -175,10 +182,11 @@ export default {
 }
 .b22 {
   width: 20%;
-  height: 48%;
+  height: 35%;
   float: left;
   padding-top: 3vh;
   position: relative;
+	cursor:pointer;
   .dv-title {
     position: absolute;
     top: 0vh;
@@ -226,10 +234,11 @@ export default {
 }
 .b24 {
   width: 20%;
-  height: 48%;
+  height: 35%;
   float: left;
   padding-top: 3vh;
   position: relative;
+	cursor:pointer;
   .dv-title {
     position: absolute;
     top: 0vh;

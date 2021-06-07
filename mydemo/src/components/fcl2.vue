@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <div class="fcl21">
+    <div class="fcl21" @click="link(3)">
       <oneCell :device="fcl21"></oneCell>
     </div>
-    <div class="fcl22">
+    <div class="fcl22" @click="link(7)">
       <oneCell :device="fcl22"></oneCell>
     </div>
-    <div class="fcl23">
+    <div class="fcl23" @click="link(17)">
       <oneCell :device="fcl23"></oneCell>
     </div>
-    <div class="fcl24">
+    <div class="fcl24" @click="link(17)">
       <oneCell :device="fcl24"></oneCell>
     </div>
   </div>
@@ -41,6 +41,11 @@ export default {
       },
     };
   },
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
+	}
 };
 </script>
 
@@ -53,15 +58,19 @@ div {
 .fcl21 {
   height: 10%;
   margin-top: 7%;
+	cursor:pointer;
 }
 .fcl22 {
   height: 10%;
   margin-top: 15%;
+	cursor:pointer;
 }
 .fcl23 {
   height: 10%;
+	cursor:pointer;
 }
 .fcl24 {
   height: 10%;
+	cursor:pointer;
 }
 </style>

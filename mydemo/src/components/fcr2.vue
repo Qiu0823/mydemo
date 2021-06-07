@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div class="fcr21">
+    <div class="fcr21" @click="link(1)">
       <oneCell :device="fcr21"></oneCell>
     </div>
-    <div class="fcr22">
+    <div class="fcr22" @click="link(5)">
       <oneCell :device="fcr22"></oneCell>
     </div>
-    <div class="fcr23">
+    <div class="fcr23" @click="link(15)">
       <oneCell :device="fcr23"></oneCell>
     </div>
     <div class="fcr24">
@@ -17,6 +17,7 @@
 
 <script>
 import oneCell from "./oneCell";
+import{linkDetail} from '@/util/util.js'
 export default {
   components: {
     oneCell,
@@ -41,6 +42,11 @@ export default {
       },
     };
   },
+	methods:{
+		link(id){
+			this.$emit('linkDetail',id)
+		}
+	}
 };
 </script>
 
@@ -52,15 +58,19 @@ div {
 .fcr21 {
   height: 10%;
   margin-top: 7%;
+	cursor:pointer;
 }
 .fcr22 {
   height: 10%;
   margin-top: 15%;
+	cursor:pointer;
 }
 .fcr23 {
   height: 10%;
+	cursor:pointer;
 }
 .fcr24 {
   height: 10%;
+	cursor:pointer;
 }
 </style>

@@ -5,9 +5,12 @@ import App from './App.vue'
 import router from './router' //引入路由
 import less from 'less'
 import dataV from '@jiaminghi/data-view'
+import VueThermometer from 'vuejs-thermometer'
 import '@/assets/less/index.less'
-import  '@/assets/less/iconfont.css'
-
+import '@/assets/iconfont/iconfont.css'
+import '@/assets/less/myElementStyle.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 // window.jQuery = $;
 // window.$ = $;
 
@@ -20,7 +23,7 @@ Vue.directive('title', {
     document.title = el.dataset.title
   }
 })
-Vue.use(less).use(dataV).use(ElementUI)
+Vue.use(less).use(dataV).use(ElementUI).use(VueThermometer).use(VueAxios,axios)
 new Vue({
   render: h => h(App),
   router

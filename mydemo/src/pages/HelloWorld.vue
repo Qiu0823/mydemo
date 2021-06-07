@@ -26,7 +26,7 @@
         <div class="tda-right">
           <!-- 上料区 -->
           <div class="shagnLiaoArea arrowBottom1">
-            <area-one-com :deviceListName="deviceList1Name" />
+            <area-one-com :deviceListName="deviceList1Name"/>
           </div>
         </div>
       </div>
@@ -45,22 +45,22 @@
         <div class="second-container-right areaBorderStyle">
           <div class="doorOne">
             <!-- <img src="@/assets/img/door.png" alt="" /> -->
-            <i class="iconfont">&#xe63f;</i>
+            <i class="iconfont icon-mendoor13"></i>
           </div>
           <div class="doorTwo">
             <!-- <img src="@/assets/img/door.png" alt="" /> -->
-            <i class="iconfont">&#xe63f;</i>
+            <i class="iconfont icon-mendoor13"></i>
           </div>
           <div class="area-name">车丝区域</div>
           <div class="scr-left">
-            <fcl1 style="width: 27%"></fcl1>
-            <fc style="width: 45%"></fc>
-            <fcl2 style="width: 28%">></fcl2>
+            <fcl1 @linkDetail="linkDetail" style="width: 27%"></fcl1>
+            <fc @linkDetail="linkDetail" style="width: 45%"></fc>
+            <fcl2 @linkDetail="linkDetail" style="width: 28%">></fcl2>
           </div>
           <div class="scr-right">
-            <fcr1 style="width: 27%"></fcr1>
-            <fc1 style="width: 46%"></fc1>
-            <fcr2 style="width: 28%"></fcr2>
+            <fcr1 @linkDetail="linkDetail" style="width: 27%"></fcr1>
+            <fc1 @linkDetail="linkDetail" style="width: 46%"></fc1>
+            <fcr2 @linkDetail="linkDetail" style="width: 28%"></fcr2>
           </div>
         </div>
       </div>
@@ -77,25 +77,25 @@
         <!-- 管拧区 -->
         <div class="third-container-right areaBorderStyle arrowBottom3">
           <div class="area-name">管拧区域</div>
-          <div class="square">分钢仪</div>
+					<div class="square" @click="linkDetail(29)" >分钢仪</div>
           <div class="tcr-left">
-            <gnleft></gnleft>
+            <gnleft @linkDetail="linkDetail"></gnleft>
           </div>
           <div class="tcr-center">
-            <gncenter></gncenter>
+            <gncenter @linkDetail="linkDetail"></gncenter>
           </div>
           <div class="tcr-right">
-            <gnright></gnright>
+            <gnright @linkDetail="linkDetail"></gnright>
           </div>
         </div>
       </div>
       <div class="area-com-container">
         <div class="area-bottom">
-          <areabottom></areabottom>
+          <areabottom @linkDetail="linkDetail"></areabottom>
         </div>
       </div>
       <div class="detect">
-        <detect></detect>
+        <detect @linkDetail="linkDetail"></detect>
       </div>
       <div class="lineDevice" style="margin-left: 28vh">
         <line-device :lineNum="3"></line-device>
@@ -110,7 +110,7 @@
           <div class="square">出废区</div>
           <div class="area-name">打包区</div>
           <div class="da-container-left">成型区</div>
-          <div class="da-container-center">
+          <div class="da-container-center" @click="linkDetail(34)">
             <div class="dv-title">打捆机</div>
             <div
               class="LEDbtn greenBtn"
@@ -173,6 +173,13 @@ export default {
     };
   },
   methods: {
+		//点击跳转传参
+		linkDetail(id){
+			this.$router.push({
+				path:'/index',
+				query:{'id':id}
+			})
+		},
     showSideNavMeth() {
       this.showSideNav = !this.showSideNav;
     },
@@ -231,7 +238,9 @@ export default {
       transform: translateX(-40%);
       top: -4vh;
       position: absolute;
+			z-index: 2;
       border: 1px solid #203456;
+
     }
     .da-container-left,
     .da-container-right {
@@ -347,7 +356,7 @@ export default {
       .doorOne {
         position: absolute;
         left: 28vw;
-        bottom: -1vh;
+        bottom: -1.5vh;
         width: 2vw;
         height: 1.5vw;
         img {
@@ -415,6 +424,8 @@ export default {
         right: 0;
         bottom: -3vh;
         line-height: 3vh;
+				z-index: 2;
+				cursor:pointer;
       }
       .area-name {
         position: absolute;
